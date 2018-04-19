@@ -1,0 +1,75 @@
+<div class="dashed">
+<span>Hello Absolutedata</span>
+</div>
+<style>
+.dashed {
+    border-bottom: 1px dashed #000;
+    text-align: center;
+    height: 10px;
+    margin-bottom: 10px;
+}
+
+.dashed span {
+    background: #fff;
+    padding: 0 5px;
+}
+</style>
+<!------------------------------------------------>
+
+<script>
+//function to count number of words
+function count_words(stringvalue)
+{
+	str1= stringvalue
+	str1 = str1.replace(/(^\s*)|(\s*$)/gi,""); 	//exclude  start and end white-space
+	str1 = str1.replace(/[ ]{2,}/gi," "); 	//convert 2 or more spaces to 1  
+	str1 = str1.replace(/\n /,"\n"); // exclude newline with a start spacing  
+	console.log("length of string : " + stringvalue +" is :");
+	console.log(str1.split(' ').length)
+}
+count_words(" Ram Lakhan  Keh Gaye ");
+///////////////////////////////////////////////////////////////////////////////
+//use comma for thousand separator
+var n = 34523453.345;
+console.log("BEFORE: " + n + "After : " + n.toLocaleString());
+/////////////////////////////////////////////////////////////
+//sort a list of integers 
+var numArray = [10, 30, 23,67,22,1,9];
+numArray = numArray.sort(function (a, b) {  return a - b;  });
+console.log(numArray);
+///////////////////////////////////////////////////////////
+//write a mul ufnction
+function mul(a){return function mul1(b){return function mul2(c){return a*b*c;}}}
+console.log(mul(2)(4)(4));
+///////////////////////////////////////////////////////////
+//find the length of an object
+var tempObj={
+name:"gaurav",
+age:25,
+job:"NA"
+}
+console.log("Length of object is :" + Object.keys(tempObj).length);
+//////////////////////////////////////////////////////////////////
+
+
+function getwords(stringvalue)
+{
+	str1= stringvalue
+	str1 = str1.replace(/(^\s*)|(\s*$)/gi,""); 	//exclude  start and end white-space
+	str1 = str1.replace(/[ ]{2,}/gi," "); 	//convert 2 or more spaces to 1  
+	str1 = str1.replace(/\n /,"\n"); // exclude newline with a start spacing  
+	//console.log("length of string : " + stringvalue +" is :");
+	return str1.split(' ');
+}
+
+var wordslist=getwords("   this is not a number");
+
+console.log("   this is not a number");
+for(var i=0;i<wordslist.length;i++)
+{
+if((wordslist[i].length)%2==0)
+{
+console.log(wordslist[i].length +"  :   "+wordslist[i]);
+}
+}
+</script>

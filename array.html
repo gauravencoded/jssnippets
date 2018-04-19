@@ -1,0 +1,144 @@
+<html>
+<head>
+</head>
+<body>
+  All Array functions and properties
+  <script>
+  var arr=['q','w','e'];
+  console.log(">>> Logging array : ")
+  console.log(arr);
+
+  console.log(">>> Finding typeof() array : ");
+  console.log(typeof(arr)); //returns type string
+
+  console.log(">>> Checking if the variable is an array : ")
+  console.log(Array.isArray(arr)); //returns boolean
+
+  console.log(">>> concateneting array elements into a string : ")
+  console.log(arr.join("-")); //returns string
+
+  console.log(">>> Pushing new values to array at the end : ");
+  arr.push("r")//returns length
+  console.log(arr);
+
+  console.log(">>> Popping value from the array : ")
+  arr.pop(); //returns the value popped
+  console.log(arr);
+
+
+  console.log(">>Finding index of a value : ");
+  console.log(arr.indexOf('w'));
+
+  console.log(">>> Removing elements from array : ");
+  arr.splice(1,2); //returns array of removed elements ars(start, number_of_words_to_remove)
+  console.log(arr);
+
+  console.log("Shifting and Unshifting does the operation in the begining of the array unlike push pop which act at the end");
+  console.log(">>> unshifting : ");
+  arr.unshift('a');
+  console.log(arr)
+
+  console.log(">>> shifting : ");
+  arr.shift();
+  console.log(arr)
+
+  console.log(">>> Creating shallow copy of an array : ");
+  var barr=arr.slice();
+  console.log(barr);
+
+  console.log(">>> Creating array from array like iterable : ");
+  var carr=Array.from("Shit"); //other iterables like object can also be passed
+  console.log(carr);
+
+
+  console.log(">>> Creating new array using of : ");
+  var ofarr=Array.of(1,2,3,4,5,6);
+  console.log(ofarr)
+
+
+  console.log(">>> Filling array with static values : ");
+  ofarr.fill('s',2,4);
+  console.log(ofarr);
+
+  console.log(">>> Reversing array : ");
+  console.log(ofarr.reverse());
+
+
+  console.log(">>> Concatening two arrays : ");
+  var array1 = ['a', 'b', 'c'];
+  var array2 = ['d', 'e', 'f'];
+  console.log(array1.concat(array2));
+
+
+  console.log(">>> Checking existence of an element in an array : ");
+  console.log(array1.includes('a'));
+
+
+  console.log(">>> Checking last index of an element : ");
+  var animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+  console.log(animals.lastIndexOf('Dodo'));
+
+
+  console.log(">>> Array to string using toString-- joins using comma: ");
+  console.log(animals.toString()); //
+
+  console.log("################   FUNCTIONS FOR ITERATION OVER ARRAYS ###############")
+
+  var array1 = ['a', 'b', 'c'];
+  var iterator1 = array1.entries();
+  console.log(iterator1.next());
+
+  console.log(">>> every OF array to check if every element passes the rule")
+  function isBelowThreshold(currentValue) {    return currentValue < 40;  }
+  var array1 = [1, 30, 39, 29, 10, 33];
+  console.log(array1.every(isBelowThreshold));
+
+  console.log(">>> Filtering array elements according to rule : ");
+  var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+  const result = words.filter(word => word.length > 6);
+  console.log(result);
+
+
+  console.log(">>> Finding first element that matches the condition : arr.find(function(elem){return elem>10;}); ==>")
+  var array1 = [5, 12, 8, 130, 44];
+  var found = array1.find(function(element) {    return element > 10;  });
+  console.log(found);
+
+  console.log(">>> finding index of first element that matches filter: ");
+  var array1 = [5, 12, 8, 130, 44];
+  function findFirstLargeNumber(element) {    return element > 13;  }
+  console.log(array1.findIndex(findFirstLargeNumber));
+
+
+  console.log(">>> Looping using foreach");
+  array1.forEach(function(element){
+    console.log(element);
+  })
+
+  console.log(">>> Getting keys of the array : ");
+  var newarr=[5,2,3,4,3];
+  var iter=newarr.keys(); //returns iterator object
+  for (let key of iter) {
+    console.log(key); // expected output: 0 1 2
+  }
+
+  console.log(">>> map function : ");
+  var array1 = [1, 4, 9, 16];
+  const map1 = array1.map(x => x * 2);
+  console.log(map1);
+
+
+  console.log(">>> some function-- at least ");
+  var array = [1, 2, 3, 4, 5];
+  var even = function(element) {  return element % 2 === 0;};
+  console.log(array.some(even));
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
