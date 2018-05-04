@@ -1,0 +1,53 @@
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+function creature()
+{
+  this.status="Living"
+
+}
+
+console.log("######    Creating object from constructor function");
+var primitveCreature= new creature();
+console.log(primitveCreature);
+
+
+console.log("#############    Creating object from Object.create(obj)");
+
+var evolvedCreature=Object.create(primitveCreature);
+console.log(evolvedCreature);
+
+console.log("#################     Adding values to prototype")
+creature.prototype.getname=function(){return "no name";};
+console.log(primitveCreature);
+console.log(primitveCreature.getname());
+
+
+
+
+console.log("############# Property added via proto is inherited to child directly");
+console.log(evolvedCreature);
+console.log(evolvedCreature.getname());
+
+
+console.log("###################### Overriding function on prototype");
+evolvedCreature.getname=function(){return "Overridden function called"};
+console.log(evolvedCreature);
+console.log(evolvedCreature.getname());
+
+
+console.log("#################333333 any children will also have overridden method");
+var advancedCreature=Object.create(evolvedCreature);
+console.log(advancedCreature);
+console.log(advancedCreature.getname());
+
+
+
+
+
+
+</script>
+</html>
