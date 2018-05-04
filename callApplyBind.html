@@ -1,0 +1,46 @@
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+console.log("Call --- Apply ----Bind is used to change the context of this for the function being called")
+console.log("Creating an Object");
+var module = {
+  x: 42,
+  getX: function() {
+    return this.x;
+  }
+}
+console.log(module);
+
+
+var bindFun = module.getX;
+console.log(bindFun);
+console.log(bindFun());
+
+
+console.log("Binding to module This will return the copy of function")
+var bindFun2 = bindFun.bind(module);
+console.log(bindFun2);
+console.log(bindFun2());
+// expected output: 42
+
+
+var callFun=module.getX;
+console.log(callFun);
+console.log(callFun());
+console.log("Calling to module this will return the result of the function")
+var callFun2=callFun.call(module);
+console.log(callFun2);
+
+
+
+var applyFun=module.getX;
+console.log(applyFun);
+console.log(applyFun());
+console.log("Aplying to module this will return the result of the function");
+var applyFun2=applyFun.apply(module);
+console.log(applyFun2);
+</script>
+</html>
